@@ -1,5 +1,4 @@
 a = 0
-b=0
 inputnumber = int(input())
 sozluk={}
 while a < inputnumber:
@@ -7,13 +6,15 @@ while a < inputnumber:
     nameAndNumber=str(input())
     splitList=nameAndNumber.split()
     sozluk[splitList[0]]=splitList[1]
-while b < inputnumber:
-    b=b+1
-    names=str(input())
-    if sozluk.get(names,"Not found") == "Not found":
-        print(sozluk.get(names,"Not found") , end="\n",sep="")
-    else:
-        print(names,"="+sozluk.get(names,"Not found") , end="\n",sep="")
+while True:
+    try:
+        names=str(input())
+        if sozluk.get(names,"Not found") == "Not found":
+            print(sozluk.get(names,"Not found") , end="\n",sep="")
+        else:
+            print(names,"="+sozluk.get(names,"Not found") , end="\n",sep="")
+    except EOFError:
+        break
         
 '''
 inputs
